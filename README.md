@@ -13,6 +13,7 @@ url = the url of your site containint the update information
 php = The php file (or html) of your webpage containing the version number.
 
 ##------------------------
+
 	Notes:
 
 	url:
@@ -26,17 +27,20 @@ php = The php file (or html) of your webpage containing the version number.
 	The application will compare the version from the Python Application exe to the version on the php
 
 	See the Default ini for examples of the format.
+
 ##------------------------
 
 Copy Python Applicaiton Build into a zip file named "0.0.0.0.zip" (change to your build exe verions number) 
 
 ##------------
+
 	To find only changed files use "utils/buildcalc.py"
+
 ##------------
 
-
 If you are making a Python applicaiton add the following code.
-#--------------
+
+
 	import sys, os, subprocess
 	##finds the directory of your application
 	if getattr(sys, 'frozen', False): #windows path fix
@@ -53,25 +57,25 @@ If you are making a Python applicaiton add the following code.
 		else: ##there is no "True" argv and the updater.exe cannot be found. Skipping the Updater process
 			print("no marker and no updater")
 			##same code here
-#--------------	
-	
-Python Application Proecess:
--> Python Applicaition Start.
--> Checks for any sys.argv options. (this will need to be changed if you are using sys.argv in your application)
--> If sys.argv is set:
--->Run Python Application as Normal
--> Else If "updater" folder and "updater.exe" file exist:
---> Run "updater.exe"
--> Else:
--->Run Python Application as Normal
 
-Updater Process:
--> Checks "updater.ini" 
--> Checks version from ini url+php
--> If version > current exe version:
---> Sets Permission on Application Path. (requires Administrator and only runs if permissions are not set)
---> Downloads new version from ini url+version+".zip"
---> Overwrights files in Application Path with files from version.zip
---> Runs Python Application
--> else:
---> Runs Python Applicaition
+	
+	Python Application Proecess:
+		-> Python Applicaition Start.
+		-> Checks for any sys.argv options. (this will need to be changed if you are using sys.argv in your application)
+		-> If sys.argv is set:
+			-->Run Python Application as Normal
+		-> Else If "updater" folder and "updater.exe" file exist:
+			--> Run "updater.exe"
+		-> Else:
+			-->Run Python Application as Normal
+
+	Updater Process:
+		-> Checks "updater.ini" 
+		-> Checks version from ini url+php
+		-> If version > current exe version:
+			--> Sets Permission on Application Path. (requires Administrator and only runs if permissions are not set)
+			--> Downloads new version from ini url+version+".zip"
+			--> Overwrights files in Application Path with files from version.zip
+			--> Runs Python Application
+		-> else:
+			--> Runs Python Applicaition
