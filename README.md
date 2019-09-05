@@ -5,12 +5,14 @@ A simple Updater for Applications using Python
 Usage.
 
 Copy foder "updater" to your application path.
+
 Set "updater.ini" To the web address and name of your updater.
 
-app = the exe of the Python Application
-path = The Full Path to your Python Application with a trailing \
-url = the url of your site containint the update information
-php = The php file (or html) of your webpage containing the version number.
+	app = the exe of the Python Application
+	path = The Full Path to your Python Application with a trailing \\
+	url = the url of your site containint the update information
+	php = The php file (or html) of your webpage containing the version number.
+
 
 ##------------------------
 
@@ -33,9 +35,7 @@ php = The php file (or html) of your webpage containing the version number.
 Copy Python Applicaiton Build into a zip file named "0.0.0.0.zip" (change to your build exe verions number) 
 
 ##------------
-
 	To find only changed files use "utils/buildcalc.py"
-
 ##------------
 
 If you are making a Python applicaiton add the following code.
