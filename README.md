@@ -40,7 +40,7 @@ Copy Python Applicaiton Build into a zip file named "0.0.0.0.zip" (change to you
 
 If you are making a Python applicaiton add the following code.
 
-
+```
 	import sys, os, subprocess
 	##finds the directory of your application
 	if getattr(sys, 'frozen', False): #windows path fix
@@ -57,8 +57,9 @@ If you are making a Python applicaiton add the following code.
 		else: ##there is no "True" argv and the updater.exe cannot be found. Skipping the Updater process
 			print("no marker and no updater")
 			##same code here
+```
 
-	
+```	
 	Python Application Proecess:
 		-> Python Applicaition Start.
 		-> Checks for any sys.argv options. (this will need to be changed if you are using sys.argv in your application)
@@ -68,7 +69,9 @@ If you are making a Python applicaiton add the following code.
 			--> Run "updater.exe"
 		-> Else:
 			-->Run Python Application as Normal
+```
 
+```
 	Updater Process:
 		-> Checks "updater.ini" 
 		-> Checks version from ini url+php
@@ -79,3 +82,4 @@ If you are making a Python applicaiton add the following code.
 			--> Runs Python Application
 		-> else:
 			--> Runs Python Applicaition
+```
