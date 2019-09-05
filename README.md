@@ -40,7 +40,7 @@ Copy Python Applicaiton Build into a zip file named "0.0.0.0.zip" (change to you
 
 If you are making a Python applicaiton add the following code.
 
-```
+```python
 	import sys, os, subprocess
 	##finds the directory of your application
 	if getattr(sys, 'frozen', False): #windows path fix
