@@ -29,6 +29,7 @@ php = The php file (or html) of your webpage containing the version number.
 ##------------------------
 
 Copy Python Applicaiton Build into a zip file named "0.0.0.0.zip" (change to your build exe verions number) 
+
 ##------------
 	To find only changed files use "utils/buildcalc.py"
 ##------------
@@ -36,22 +37,22 @@ Copy Python Applicaiton Build into a zip file named "0.0.0.0.zip" (change to you
 
 If you are making a Python applicaiton add the following code.
 #--------------
-import sys, os, subprocess
-##finds the directory of your application
-if getattr(sys, 'frozen', False): #windows path fix
-	exe_path = os.path.dirname(sys.executable)
-elif __file__:
-	exe_path = os.path.dirname(os.path.abspath(__file__))
+	import sys, os, subprocess
+	##finds the directory of your application
+	if getattr(sys, 'frozen', False): #windows path fix
+		exe_path = os.path.dirname(sys.executable)
+	elif __file__:
+		exe_path = os.path.dirname(os.path.abspath(__file__))
 
-if __name__ == "__main__":
-	if len(sys.argv) > 1: ##app will be run with "True" as a sys.argv, after the updater is complete. This will skip running the updater
-		##do your code here
-	elif os.path.isdir(exe_path+"\\updater"): ##app can find the "updater" folder
-		if os.path.isfile(exe_path+"\\updater\\updater.exe"): ##app can find the "updater.exe" file
-			subprocess.Popen(exe_path+"\\updater\\updater.exe")
-	else: ##there is no "True" argv and the updater.exe cannot be found. Skipping the Updater process
-		print("no marker and no updater")
-		##same code here
+	if __name__ == "__main__":
+		if len(sys.argv) > 1: ##app will be run with "True" as a sys.argv, after the updater is complete. This will skip running the updater
+			##do your code here
+		elif os.path.isdir(exe_path+"\\updater"): ##app can find the "updater" folder
+			if os.path.isfile(exe_path+"\\updater\\updater.exe"): ##app can find the "updater.exe" file
+				subprocess.Popen(exe_path+"\\updater\\updater.exe")
+		else: ##there is no "True" argv and the updater.exe cannot be found. Skipping the Updater process
+			print("no marker and no updater")
+			##same code here
 #--------------	
 	
 Python Application Proecess:
