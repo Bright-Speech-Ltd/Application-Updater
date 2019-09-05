@@ -35,7 +35,9 @@ Set "updater.ini" To the web address and name of your updater.
 Copy Python Applicaiton Build into a zip file named "0.0.0.0.zip" (change to your build exe verions number) 
 
 ##------------
-	To find only changed files use "utils/buildcalc.py"
+
+	To find only changed files use "Utils/buildcalc.py"
+	
 ##------------
 
 If you are making a Python applicaiton add the following code.
